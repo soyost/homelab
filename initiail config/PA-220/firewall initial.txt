@@ -1,0 +1,22 @@
+!!!
+
+configure
+
+delete network virtual-wire default-vwire
+
+set network interface ethernet ethernet1/1 layer3 dhcp-client enable yes
+set zone untrust network layer3 ethernet1/1
+set network virtual-router default interface ethernet1/1
+
+
+set network interface ethernet ethernet1/2 layer3
+set network interface ethernet ethernet1/2 layer3 ip 10.255.255.1/30
+set zone trust network layer3 ethernet1/2
+set network virtual-router default interface ethernet1/2
+
+set network profiles interface-management-profile LAB-TRANSIT-MGMT ping yes
+set network interface ethernet ethernet1/2 layer3 interface-management-profile LAB-TRANSIT-MGMT
+
+commit
+
+end

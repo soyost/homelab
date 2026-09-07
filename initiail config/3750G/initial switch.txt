@@ -1,0 +1,49 @@
+!!!
+
+enable
+
+configure terminal
+
+hostname LAB3750
+
+username steven privilege 15 secret 0 [REDACTED]
+
+
+ip domain-name yostlab.local
+
+crypto key generate rsa
+! enter 2048 and wait for generation  
+
+line vty 0 15
+ login local
+ transport input ssh
+
+
+vlan 100
+exit
+
+interface GigabitEthernet1/0/1
+ description YOST-LAB-220 UPLINK
+ switchport access vlan 100
+exit
+
+interface Vlan100
+ description PA-220 TRANSIT - 10.255.255.0/30
+ ip address 10.255.255.2 255.255.255.252
+exit
+
+vlan 998
+  name NATIVE
+
+vlan 999
+  name UNUSED
+
+exit
+
+interface range gi1/0/2 - 28
+  switchport access vlan 999
+  shutdown
+
+end
+
+!!

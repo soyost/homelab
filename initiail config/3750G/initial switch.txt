@@ -18,9 +18,16 @@ line vty 0 15
  login local
  transport input ssh
 
+exit
 
 vlan 100
-exit
+  name UPLINK
+
+vlan 998
+  name NATIVE
+
+vlan 999
+  name UNUSED
 
 interface GigabitEthernet1/0/1
  description YOST-LAB-220 UPLINK
@@ -30,14 +37,6 @@ exit
 interface Vlan100
  description PA-220 TRANSIT - 10.255.255.0/30
  ip address 10.255.255.2 255.255.255.252
-exit
-
-vlan 998
-  name NATIVE
-
-vlan 999
-  name UNUSED
-
 exit
 
 interface range gi1/0/2 - 28

@@ -1,0 +1,20 @@
+PA-220
+│
+├── MGT
+│   └── 192.168.1.1/24
+│
+├── ethernet1/1  [Layer 3 / WAN]
+│   ├── IP: 192.168.86.31/24
+│   ├── Zone: untrust
+│   └── Virtual Router: default
+│
+├── ethernet1/2  [Layer 3 / transit]
+│   ├── IP: 10.255.255.1/30
+│   ├── Zone: trust
+│   ├── Virtual Router: default
+│   └── Interface Mgmt Profile: LAB-TRANSIT-MGMT
+│       └── ping enabled
+│
+└── Virtual Router: default
+    └── Default route:
+        0.0.0.0/0 → 192.168.86.1

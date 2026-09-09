@@ -15,7 +15,7 @@ boot-start-marker
 boot-end-marker
 !
 !
-username steven privilege 15 secret 5 $1$Zwej$J/eYdU5OOGQKXPzS8BZht0
+username steven privilege 15 secret 5 <value>
 !
 !
 no aaa new-model

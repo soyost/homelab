@@ -1,0 +1,18 @@
+LAB3750
+│
+├── Gi1/0/1  [PA-220 UPLINK et1/2]
+│   ├── Access VLAN 100
+│   
+│
+├── Vlan100  [Layer 3 SVI]
+│   ├── IP: 10.255.255.2/30
+│   └── PA transit
+│
+├── Gi1/0/2  [PA-220-MGT]
+│   ├── Access VLAN 10
+│  
+│
+├── Vlan50  [Layer 3 SVI]
+│   └── IP: 10.10.10.1/24
+│
+└── 

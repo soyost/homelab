@@ -19,4 +19,13 @@ set network interface ethernet ethernet1/2 layer3 interface-management-profile L
 
 commit
 
-end
+! Adding the MGT port and routing
+! changed the MGT IP from the DHCP that was assigned
+
+set deviceconfig system type static
+set deviceconfig system ip-address 10.10.10.2 netmask 255.255.255.0
+set deviceconfig system default-gateway 10.10.10.1
+
+! return route for MGT
+
+set network virtual-router default routing-table ip static-route MGMT-VLAN-10 destination 10.10.10.0/24 nexthop ip-address 10.255.255.2

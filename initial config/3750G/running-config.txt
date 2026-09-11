@@ -12,7 +12,7 @@ boot-start-marker
 boot-end-marker
 !
 !
-username steven privilege 15 secret 5 <vlaue>
+username steven privilege 15 secret 5 <value>
 !
 !
 no aaa new-model

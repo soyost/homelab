@@ -1,0 +1,24 @@
+                         INTERNET
+                            │
+                         PA-220
+                    Firewall / NAT
+                            │
+                     VLAN 100 /30
+                            │
+                         CS3750
+                    L3 routing / DHCP
+                            │
+                  ──────────┴──────────
+                  │                    │
+               VLAN 10              VLAN 20
+                MGMT                CLIENTS
+                  │                    │
+              Norns/jumpbox           PC
+                  │
+                  │
+              future Aruba
+                  │
+               VLAN 30
+               SERVERS
+                  │
+                VEP 1425

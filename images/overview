@@ -38,3 +38,35 @@
                                                     Future VLANs
                                                    /      |      \
                                                  VLAN10  VLAN20  VLAN30
+
+
+
+
+
+
+
+                         PA-220
+                            |
+                         CS3750
+                      L3 / DHCP
+                            |
+              ┌─────────────┴─────────────┐
+              |                           |
+           VLAN 10                     VLAN 30
+           MGMT                       SERVERS
+              |                           |
+        ┌─────┴─────┐                     |
+        |           |                     |
+      Norns       AR2930                VEP
+        |                                 |
+     Ansible                         virtualization
+        |                                 |
+        |                    ┌────────────┼────────────┐
+        |                    |            |            |
+        +------------------> K8s-01     K8s-02       K8s-03
+                              |            |            |
+                              └────────────┴────────────┘
+                                           |
+                                      Kubernetes
+                                           |
+                                    ASCII picture app

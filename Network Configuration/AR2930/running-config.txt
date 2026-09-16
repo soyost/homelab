@@ -1,0 +1,43 @@
+Running configuration:
+
+; JL558A Configuration Editor; Created on release #WC.16.07.0003
+; Ver #14:01.4f.f8.1d.9b.3f.bf.bb.ef.7c.59.fc.6b.fb.9f.fc.ff.ff.37.ef:02
+hostname "AR2930"
+module 1 type jl558a
+ip default-gateway 10.10.10.1
+snmp-server community "public" unrestricted
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1,10
+   untagged 2-9,11-52
+   ip address dhcp-bootp
+   ipv6 enable
+   ipv6 address dhcp full
+   exit
+vlan 10
+   name "MGMT:10.10.10.0/24"
+   tagged 1
+   ip address 10.10.10.3 255.255.255.0
+   exit
+vlan 20
+   name "CLIENTS:10.20.20.0/24"
+   tagged 1
+   no ip address
+   exit
+vlan 30
+   name "SERVERS:10.30.30.0/24"
+   untagged 10
+   tagged 1
+   no ip address
+   exit
+vlan 40
+   name "LAB-IOT:10.40.40.0/24"
+   tagged 1
+   no ip address
+   exit
+no tftp server
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+no dhcp tr69-acs-url
+password manager
